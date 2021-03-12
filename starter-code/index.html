@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Pomodoro app</title>
+</head>
+<body>
+  <div id="wrapper">
+    <h2 class="center">Pomodoro</h2>
+    <!-- Navigation  -->
+    <nav class="center">
+      <ul class="body1">
+        <li class="pointer active">pomodoro</li>
+        <li class="pointer">short break</li>
+        <li class="pointer">long break</li>
+      </ul>
+      <div id="bgindicator"></div>
+    </nav>
+    <!-- Timer -->
+    <section class="center" id="timer">
+      <div class="" id="outer-circle">
+        <div class="" id="inner-circle">
+          <svg class="center" id="ring">
+            <circle cx="50%" cy="50%" r="163"></circle>
+          </svg>
+        </div>
+        <div id="textcontainer">
+          <h1 id="time">00:00</h1>
+          <h3 id="action" class="pointer" onclick="action(this.innerText)">start</h3>
+        </div>
+      </div>
+    </section>
+    <!-- Settings Modal -->
+    <section id="settings" class="center">
+      <img src="assets/icon-settings.svg" class="pointer" />
+    </section>
+    <section id="settingsContainer">
+      <div class="" id="formOuter">
+        <form>
+          <div id="settingsHeader" class="">
+            <h2>Settings</h2>
+            <img 
+            src="assets/icon-close.svg" 
+            class="pointer"
+            id="close" 
+            height="14px" 
+            width="14px" 
+            alt="close">
+          </div>
+          <hr />
+          <div id="settingsTime">
+            <h4>time (minutes)</h4>
+            <!-- Pomodoro Input -->
+            <div class="inputs">
+              <div class="input">
+                <label for="pomodoro" class="body2">Pomodoro</label>
+                <div class="inputNumber">
+                  <input 
+                  type="number" 
+                  id="pomodoro"
+                  value="25"
+                  class="body1"
+                  min="1"
+                  max="60" />
+                  <!-- input buttons -->
+                  <div class="inputButtons">
+                    <button class="uparrow" onclick="inc('pomodoro')">
+                      <img src="assets/icon-arrow-up.svg" />
+                    </button>
+                    <button class="downarrow" onclick="dec('pomodoro')">
+                      <img src="assets/icon-arrow-down.svg" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <label for="shortbreak" class="body2">Short Break</label>
+                <div class="inputNumber">
+                  <input 
+                  type="number" 
+                  id="shortbreak"
+                  value="5"
+                  class="body1"
+                  min="1"
+                  max="60" />
+                  <div class="inputButtons">
+                    <button class="uparrow" onclick="inc('shortbreak')">
+                      <img src="assets/icon-arrow-up.svg" />
+                    </button>
+                    <button class="downarrow" onclick="dec('shortbreak')">
+                      <img src="assets/icon-arrow-down.svg" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <label for="longbreak" class="body2">Short Break</label>
+                <div class="inputNumber">
+                  <input 
+                  type="number" 
+                  id="longbreak"
+                  value="15"
+                  class="body1"
+                  min="1"
+                  max="60" />
+                  <div class="inputButtons">
+                    <button class="uparrow" onclick="inc('longbreak')">
+                      <img src="assets/icon-arrow-up.svg" />
+                    </button>
+                    <button class="downarrow" onclick="dec('longbreak')">
+                      <img src="assets/icon-arrow-down.svg" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="hr" width="80%"/>
+          <div class="font" id="font">
+            <h4>font</h4>
+            <div class="fonts" id="fonts">
+              <div class="style" id="kumbh">Aa</div>
+              <div class="style" id="roboto">Aa</div>
+              <div class="style" id="space">Aa</div>
+            </div>
+          </div>
+          <div id="fontBg"></div>
+          <hr class="hr" width="80%">
+          <div class="color" id="color">
+            <h4>color</h4>
+            <div class="colors" id="colors">
+              <div class="colorChange" id="orange"></div>
+              <div class="colorChange" id="blue"></div>
+              <div class="colorChange" id="purple"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="settingsOverlay"></div>
+    </section>
+  </div>
+<script src="js/script.js"></script>
+</body>
+</html>

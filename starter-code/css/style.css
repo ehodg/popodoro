@@ -1,0 +1,393 @@
+:root {
+    --peach: #f87070;
+    --teal: #70F3F8;
+    --purple: #D881F8;
+    --grey: #D7E0FF;
+    --dark-blue: #1E213F;
+    --white: #FFFFFF;
+    --beige: #EFF1FA;
+    --dark: #161932;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+/* Main tags */
+body {
+    background-color: var(--dark-blue);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 100px;
+    letter-spacing: -5px;
+    line-height: 120px;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 34px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+nav {
+    padding: 0 10px 0 10px;
+    color: var(--grey);
+    width: 373px;
+    height: 63px;
+    z-index: 10;
+    background-color: var(--dark);
+    border-radius: 50px;
+}
+
+nav > ul {
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+nav > ul > li {
+    opacity: 0.4;
+    transition: opacity 10ms ease-out;
+}
+
+form {
+    pointer-events: auto;
+    margin: auto;
+    border-radius: 25px;
+    width: 550px;
+    height: 464px;
+    background-color: var(--white);
+}
+
+hr {
+    opacity: 0.4;
+}
+
+input {
+    background-color: var(--beige);
+    border: none;
+    width: 140px;
+    height: 48px;
+    background-color: var(--beige);
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Kumbh Sans;
+    line-height: 14px;
+    padding-left: 30px;
+    margin-right: 30px;
+}
+
+
+
+/* 
+-----------------------------------------------------------------------------
+Structural ids
+-----------------------------------------------------------------------------
+*/
+
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+}
+#bgindicator {
+    border-radius: 50px;
+    height: 48px;
+    width: calc(95%/3);
+    margin-top: -55px;
+    background-color: var(--peach);
+    transition: margin-left 300ms ease-out;
+
+}
+
+#outer-circle {
+    position: relative;
+    display: flex;
+    height: 410px;
+    width: 410px;
+    margin-top: 45px;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+    box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;;
+}
+
+#inner-circle {
+    display: flex;
+    margin: auto;
+    height: 366px;
+    width: 366px;
+    border-radius: 50%;
+    background-color: var(--dark);
+}
+
+#ring {
+    margin: auto;
+    width: 339px;
+    height: 339px;
+}
+
+#ring > circle {
+    fill: transparent;
+    stroke: var(--peach);
+    stroke-width: 10;
+    stroke-dasharray: 1024, 1024;
+    stroke-dashoffset: 1024;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s ease-out; 
+}
+
+#textcontainer {
+    position: absolute;
+    height: 410px;
+    width: 410px;
+}
+
+#time {
+    margin-top: 140px;
+    text-align: center;
+}
+
+#action {
+    text-align: center;
+}
+
+#settings {
+    margin-top: 100px;
+}
+
+#settingsContainer {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 101;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    transition: opacity ease-in 0.2s, visibility linear 0.5s;
+}
+
+#settingsOverlay {
+    pointer-events: auto;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 12, 28, 0.5);
+    z-index: 100;
+}
+
+#formOuter {
+    pointer-events: none;
+    position: absolute;
+    z-index: 110;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+#settingsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 34px 40px;
+}
+
+#settingsHeader  h2 {
+    margin: 0;
+    color: var(--dark);
+}
+
+#settingsTime {
+    margin: 0 20px 0 40px;
+}
+
+#settingsTime  h4 {
+    padding: 25px 0;
+    color: var(--dark);
+}
+
+#font {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px 0 40px;
+}
+
+#font h4 {
+    display: flex;
+    align-items: center;
+    color: var(--dark);
+}
+
+#fonts {
+    display: flex;
+    color: var(--dark);
+}
+
+#color {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px 0 40px;
+}
+
+#color h4 {
+    display: flex;
+    align-items: center;
+    color: var(--dark);
+}
+
+#colors {
+    display: flex;
+}
+
+#orange {
+    background-color: var(--peach);
+}
+
+#blue {
+    background-color: var(--teal);
+}
+
+#purple {
+    background-color: var(--purple);
+}
+/*
+---------------------------------------------------------------------------------------------------- 
+utility classes
+---------------------------------------------------------------------------------------------------
+*/
+
+.center {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.body1 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.body2 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.active {
+    color: var(--dark);
+    opacity: 1;
+}
+
+.pointer {
+    user-select: none;
+    cursor: pointer;
+}
+
+.inputs {
+    display: flex;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    margin-right:20px;
+}
+
+.input label {
+    color: var(--dark);
+    padding-bottom: 10px;
+    opacity: 40%;
+}
+
+.input input {
+    height: 48px;
+    width: 80px;
+    background-color: var(--beige);
+    border: none;
+    outline: none;
+    color: var(--dark);    
+}
+
+.input input::-webkit-inner-spin-button,
+.input input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputNumber {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--beige);
+    padding: 0 15px;
+    border-radius: 10px;
+}
+
+.inputButtons {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--beige);
+}
+
+.inputButtons button {
+    background-color: var(--beige);
+    border: none;
+    outline: none;
+}
+
+.inputButtons button img {
+    opacity: 25%;
+    transition: opacity 0.2s ease-out;
+}
+
+.inputButtons button img:hover {
+    opacity: 1;
+}
+
+.hr {
+    margin: 20px 50px;
+}
+
+.style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    background-color: var(--grey);
+    border-radius: 50%;
+}
+
+.colorChange {
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    border-radius: 50%;
+}
